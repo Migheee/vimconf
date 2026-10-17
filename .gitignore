@@ -1,0 +1,6 @@
+# Plugin scaricati da plugins.vim (si riscaricano da soli se mancano)
+plugged/
+# Cronologia delle cartelle visitate con netrw (cambia di continuo)
+.netrwhist
+# File temporanei di Vim
+*.swp

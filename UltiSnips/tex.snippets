@@ -1,0 +1,43 @@
+# Snippet LaTeX personali (UltiSnips)
+# Uso: scrivi la parola chiave e premi Ctrl-j; poi Ctrl-j / Ctrl-k per passare da un campo all'altro.
+
+global !p
+def a_inizio_riga(snip):
+	"""Toglie l'indentazione dalle righe dopo la prima: listings stampa anche gli spazi iniziali."""
+	fine = snip.snippet_end[0]
+	for riga in range(snip.snippet_start[0] + 1, fine + 1):
+		snip.buffer[riga] = snip.buffer[riga].lstrip()
+	# Il cursore sta sull'ultima riga, che abbiamo cambiato: UltiSnips vuole sapere dove rimetterlo
+	snip.cursor.set(fine, len(snip.buffer[fine]))
+endglobal
+
+post_expand "a_inizio_riga(snip)"
+snippet cod "Blocco di codice (codice)"
+\begin{codice}[${1:Codice}]
+$0
+\end{codice}
+endsnippet
+
+snippet def "Definizione (definizione)"
+\begin{definizione}[${1:Definizione}]
+	$0
+\end{definizione}
+endsnippet
+
+snippet nota "Nota con due titoli (nota)"
+\begin{nota}{${1:Titolo}}{${2:Sottotitolo}}
+	$0
+\end{nota}
+endsnippet
+
+snippet ite "Elenco puntato (itemize)"
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+snippet enu "Elenco numerato (enumerate)"
+\begin{enumerate}
+	\item $0
+\end{enumerate}
+endsnippet
