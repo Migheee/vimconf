@@ -4,3 +4,5 @@ plugged/
 .netrwhist
 # File temporanei di Vim
 *.swp
+# PDF della guida (si rigenera con: pandoc -d stampa-comandi.yaml)
+COMANDI.pdf

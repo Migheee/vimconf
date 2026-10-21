@@ -1,0 +1,72 @@
+# Trasforma COMANDI.md in un PDF A4 da stampare:   cd ~/.vim && pandoc -d stampa-comandi.yaml
+input-files:
+  - COMANDI.md
+output-file: COMANDI.pdf
+pdf-engine: lualatex
+# Il primo titolo (# I miei comandi Vim) diventa il titolo del documento
+shift-heading-level-by: -1
+
+variables:
+  documentclass: article
+  papersize: a4
+  fontsize: 10pt
+  lang: it
+  geometry:
+    - top=1.5cm
+    - bottom=1.6cm
+    - left=2cm
+    - right=2cm
+  # Tutto in JetBrains Mono: descrizioni in peso normale, tasti e comandi in grassetto
+  mainfont: JetBrainsMono-Regular.otf
+  mainfontoptions:
+    - Scale=0.9
+    - Ligatures=CommonOff
+    - Contextuals=AlternateOff
+    - BoldFont=JetBrainsMono-Bold.otf
+    - ItalicFont=JetBrainsMono-Italic.otf
+    - BoldItalicFont=JetBrainsMono-BoldItalic.otf
+  sansfont: JetBrainsMono-Regular.otf
+  sansfontoptions:
+    - Scale=0.9
+    - Ligatures=CommonOff
+    - Contextuals=AlternateOff
+    - BoldFont=JetBrainsMono-ExtraBold.otf
+  monofont: JetBrainsMono-Bold.otf
+  monofontoptions:
+    - Scale=0.9
+    - Ligatures=CommonOff
+    - Contextuals=AlternateOff
+    - BoldFont=JetBrainsMono-ExtraBold.otf
+  header-includes: |
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0.4em}
+    \renewcommand{\arraystretch}{1.06}
+    \raggedright
+    % Titoli
+    \usepackage{titlesec}
+    \titleformat{\section}{\sffamily\large\bfseries}{}{0pt}{}
+    \titleformat{\subsection}{\sffamily\normalsize\bfseries}{}{0pt}{}
+    \titleformat{\subsubsection}{\sffamily\normalsize}{}{0pt}{\textendash\ }
+    \titlespacing*{\section}{0pt}{1.3em}{0.4em}
+    \titlespacing*{\subsection}{0pt}{0.8em}{0.15em}
+    \titlespacing*{\subsubsection}{0pt}{0.6em}{0.1em}
+    % Un titolo non resta mai da solo in fondo alla pagina
+    \usepackage{needspace}
+    \usepackage{etoolbox}
+    \pretocmd{\section}{\needspace{5\baselineskip}}{}{}
+    \pretocmd{\subsection}{\needspace{5\baselineskip}}{}{}
+    \pretocmd{\subsubsection}{\needspace{4\baselineskip}}{}{}
+    % Tabelle senza righe orizzontali, più vicine al testo
+    \renewcommand{\toprule}{}
+    \renewcommand{\midrule}{}
+    \renewcommand{\bottomrule}{}
+    \setlength{\LTpre}{0.2em}
+    \setlength{\LTpost}{0.4em}
+    % Titolo del documento
+    \usepackage{titling}
+    \setlength{\droptitle}{-4em}
+    \pretitle{\begin{flushleft}\sffamily\LARGE\bfseries}
+    \posttitle{\end{flushleft}\vspace{-2.5em}}
+    \predate{}\postdate{}\date{}
+    % Solo il numero di pagina
+    \pagestyle{plain}
