@@ -7,6 +7,7 @@ xnoremap iv i"
 xnoremap av a"
 nnoremap <leader>cd :Ex<CR>
 nnoremap <leader>m :terminal glow %<CR>
+nnoremap <leader>t :/TEO<CR>
 
 " Scorciatoie valide solo per certi tipi di file. Altrove non fanno nulla (<Nop>), così non partono
 " per sbaglio i comandi di Vim con gli stessi tasti (za = apri/chiudi piega, = = indenta)
