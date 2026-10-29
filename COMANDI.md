@@ -71,7 +71,13 @@ testo: `diw` cancella la parola sotto il cursore.
 | `Ctrl-e`                  | chiude il menu                                                          |
 | `Ctrl-Space`              | apre subito il menu                                                     |
 
-## 2. Nei file C
+## 2. Nei file Markdown
+
+|                           |                                                                         |
+|---------------------------|-------------------------------------------------------------------------|
+| `<Space>m`                | anteprima formattata (`:q` chiude)                                      |
+
+## 3. Nei file C
 
 |                           |                                                                         |
 |---------------------------|-------------------------------------------------------------------------|
@@ -98,7 +104,7 @@ testo: `diw` cancella la parola sotto il cursore.
 | `:LspDocumentFormat`      | formatta il file                                                        |
 | `:LspStatus`              | server LSP attivi                                                       |
 
-## 3. Nei file LaTeX
+## 4. Nei file LaTeX
 
 ### Compilare
 
@@ -126,6 +132,7 @@ testo: `diw` cancella la parola sotto il cursore.
 | `def`                     | blocco definizione                                                      |
 | `nota`                    | blocco nota                                                             |
 | `ese`                     | blocco esempio                                                          |
+| `m`                       | \\mathcal{} (anche subito dopo \$ \_ \^ {)                              |
 | `ite`  `enu`              | elenco puntato / numerato                                               |
 | `Ctrl-b`                  | nuovo environment: il nome scritto nel \\begin si copia nell'\\end      |
 | `Ctrl-j`  `Ctrl-k`        | campo successivo / precedente                                           |
@@ -151,9 +158,3 @@ testo: `diw` cancella la parola sotto il cursore.
 | `tsf`                     | \\frac{a}{b} / a/b                                                       |
 | `%`                       | salta tra \\begin e \\end                                                 |
 | `]]`                      | (Insert) chiude l'environment aperto                                    |
-
-## 4. Nei file Markdown
-
-|                           |                                                                         |
-|---------------------------|-------------------------------------------------------------------------|
-| `<Space>m`                | anteprima formattata (`:q` chiude)                                      |

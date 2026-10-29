@@ -57,6 +57,10 @@ function! s:ApplyCustomHighlights() abort
     highlight VertSplit    guifg=#30363d guibg=NONE
     highlight Pmenu        guifg=#c9d1d9 guibg=#161b22
     highlight PmenuSel     guifg=#0d1117 guibg=#58a6ff
+
+    " --- PERSONALIZZAZIONE CURSORE E PARENTESI ---
+    highlight Cursor guifg=#0d1117 guibg=#58a6ff ctermfg=black ctermbg=blue
+    highlight MatchParen guifg=#ffffff guibg=#1f6feb gui=bold ctermfg=white ctermbg=blue cterm=bold
 endfunction
 
 " Applica il tema (questo triggererà l'autocmd qui sopra in automatico)

@@ -48,6 +48,8 @@ snippet ese "Esempio"
 \end{esempio}
 endsnippet
 
-snippet m
-\mathcal{$0}
+# m + Ctrl-j = \mathcal{}. Scatta anche subito dopo $ _ ^ { ( e simili, ma non in fondo a una
+# parola (es. "problem") né dopo un backslash. Il carattere prima della m viene rimesso al suo posto
+snippet "(^|[^a-zA-Z\\])m" "Calligrafico (mathcal)" r
+`!p snip.rv = match.group(1)`\mathcal{$0}
 endsnippet
